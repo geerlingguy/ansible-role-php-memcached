@@ -6,13 +6,15 @@ Installs PHP Memcached support on RedHat/CentOS/Debian/Ubuntu.
 
 ## Requirements
 
-None.
+This role doesn't *explicitly* require Memcached to be installed, but if you don't have the daemon running somewhere (either on the same server, or somewhere else), this role won't be all that helpful. Check out `geerlingguy.memcached` for a simple role to install and configure Memcached (either on the same server, or separate servers).
 
 ## Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    TODO
+    php_enablerepo: ""
+
+(RedHat/CentOS only) If you have enabled any additional repositories (might I suggest geerlingguy.repo-epel or geerlingguy.repo-remi), those repositories can be listed under this variable (e.g. `remi,epel`). This can be handy, as an example, if you want to install the latest version of PHP 5.4, which is in the Remi repository.
 
 ## Dependencies
 
