@@ -3,6 +3,6 @@
   remote_user: root
 
   roles:
-    - geerlingguy.apache
+    - geerlingguy.memcached
     - geerlingguy.php
     - ansible-role-php-memcached
