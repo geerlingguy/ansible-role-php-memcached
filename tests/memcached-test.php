@@ -3,21 +3,33 @@
 /**
  * @file
  * Test if Memcached is available and working.
+ *
+ * Note that if you run this script more than once per second, the add() call
+ * will fail. Why would you run this more than once per second?!
  */
 
-$connect_success = FALSE;
+$success = FALSE;
+$key = 'test';
+$value = 'Success';
 
 if (class_exists('Memcached')) {
   $memcached = new Memcached;
-  $success = $memcached->connect('127.0.0.1');
+  $memcached->addServer('127.0.0.1', 11211);
 
-  if ($connect_success) {
-    print 'Memcached connection successful';
-    exit(0);
+  // Test adding a value to memcached.
+  if ($memcached->add($key, $value, 1)) {
+    $result = $memcached->get($key);
+
+    // If we get the expected result, it was a success.
+    if ($result == $value) {
+      $success = TRUE;
+      print "Memcached connection successful.\r\n";
+      exit(0);
+    }
   }
 }
 
-if (!$connect_success) {
-  echo 'Memcached not working properly';
+if (!$success) {
+  print "Memcached not working properly.\r\n";
   exit(1);
 }
