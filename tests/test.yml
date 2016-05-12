@@ -4,6 +4,7 @@
 
   vars:
     php_enable_webserver: false
+    php_memcached_package: php5-memcached
 
   roles:
     - geerlingguy.memcached
