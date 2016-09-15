@@ -40,10 +40,7 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Run script to test if Memcached is available and working.
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm php /etc/ansible/roles/role_under_test/tests/memcached-test.php'
-
-  # Ensure PHP configurations have taken effect.
-  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm php -i | grep 'memory_limit.*192'
+  - 'sudo docker exec "$(cat ${container_id})" env TERM=xterm php /etc/ansible/roles/role_under_test/tests/memcached-test.php'
 
 after_success:
   # Clean up.
