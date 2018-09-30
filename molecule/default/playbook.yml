@@ -14,4 +14,6 @@
   post_tasks:
     - name: Run test script to confirm Memcached is reachable via PHP.
       script: memcached-test.php
-      executable: php
+      args:
+        executable: php
+      changed_when: false
