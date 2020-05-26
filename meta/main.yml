@@ -3,6 +3,7 @@ dependencies:
   - geerlingguy.php
 
 galaxy_info:
+  role_name: php-memcached
   author: geerlingguy
   description: PHP Memcached support for Linux
   company: "Midwestern Mac, LLC"
