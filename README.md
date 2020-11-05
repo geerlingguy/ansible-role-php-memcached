@@ -1,6 +1,6 @@
 # Ansible Role: PHP-Memcached
 
-[![Build Status](https://travis-ci.com/geerlingguy/ansible-role-php-memcached.svg?branch=master)](https://travis-ci.com/geerlingguy/ansible-role-php-memcached)
+[![CI](https://github.com/geerlingguy/ansible-role-php-memcached/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-php-memcached/actions?query=workflow%3ACI)
 
 Installs PHP Memcached support on RedHat/CentOS/Debian/Ubuntu.
 
