@@ -8,12 +8,8 @@ galaxy_info:
   description: PHP Memcached support for Linux
   company: "Midwestern Mac, LLC"
   license: "license (BSD, MIT)"
-  min_ansible_version: 1.8
+  min_ansible_version: 2.10
   platforms:
-    - name: EL
-      versions:
-        - 7
-        - 8
     - name: Debian
       versions:
         - all
