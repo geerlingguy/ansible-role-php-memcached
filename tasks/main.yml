@@ -8,6 +8,12 @@
     php_memcached_package: "{{ __php_memcached_package }}"
   when: php_memcached_package is not defined
 
+# Enable CRB repository (RedHat-based systems).
+- name: Enable CRB repository (RedHat-based systems).
+  command: dnf config-manager --set-enabled crb
+  ignore_errors: true
+  when: ansible_os_family == 'RedHat'
+
 - name: Install PHP Memcached extension (RedHat).
   yum:
     name: "{{ php_memcached_package }}"
